@@ -13,8 +13,8 @@ execute if score time daytime matches 6000 run fill 256 18 -313 253 16 -313 mine
 
 # hat
 ## copy
-execute as @a at @s if score @s sneaktime matches 1 if data entity @s {SelectedItem:{tag:{hat:1b}}} run item replace entity @s armor.head from entity @s weapon.mainhand
+execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{hat:1b}}]}] at @s if score @s sneaktime matches 1 if data entity @s {SelectedItem:{tag:{hat:1b}}} run item replace entity @s armor.head from entity @s weapon.mainhand
 ## delete item
-execute as @a at @s if score @s sneaktime matches 1 if data entity @s {SelectedItem:{tag:{hat:1b}}} run item replace entity @s weapon.mainhand with air
+execute as @a[nbt=!{Inventory:[{Slot:103b,tag:{hat:1b}}]}] at @s if score @s sneaktime matches 1 if data entity @s {SelectedItem:{tag:{hat:1b}}} run item replace entity @s weapon.mainhand with air
 ## reset score
 scoreboard players set @a sneaktime 0
